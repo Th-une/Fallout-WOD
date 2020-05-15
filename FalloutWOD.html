@@ -2593,14 +2593,11 @@
 					Damage}}"></button>
 				</div>
 				<div class="sheet-item sheet-30">
-				<button type="roll" class="sheet-weaponroll" name="roll_weapon" value="&{template:wod} {{name= @{character_name} attacks @{target|character_name} with }} {{attack= @{weapon_name} }} {{attr= Attribute @{weapon_attribute} }} {{skill= Skill @{weapon_skill}}} {{mod= Weapon @{weapon_modifier} }} {{wound= Wound @{injury} }} {{result=[[?{Dice|2}d20sacs1cf20<[[@{weapon_attribute} + @{weapon_skill} + @{weapon_modifier} + @{injury}]]]] Successes,
+				<button type="roll" class="sheet-weaponroll" name="roll_weapon" value="&{template:wod} {{name= @{character_name} attacks @{target|character_name} with }} {{attack= @{weapon_name} }} {{attr= Weapon @{weapon_damage} }} {{attr= Attribute @{weapon_attribute} }} {{skill= Skill @{weapon_skill}}} {{mod= Weapon @{weapon_modifier} }} {{wound= Wound @{injury} }} {{result=[[?{Dice|2}d20sacs1cf20<[[@{weapon_attribute} + @{weapon_skill} + @{weapon_modifier} + @{injury}]]]] Successes,
 				hitting the
-				[[ 1t[Wound-Table] ]] }}"></button>
-				<div class="sheet-item sheet-30">
-                    <button type="roll" class="sheet-combinedroll" name="roll_attack_damage" value="&{template:wod} {{name= @{character_name} }} {{damage= @{weapon_name} }} {{attr= Weapon @{weapon_damage} }} {{skill= Stength @{weapon_strength_damage} }}  {{mod= Extra ?{Attack Extra Successes|0} }} {{result= [[(@{weapon_damage} + @{weapon_strength_damage} + ?{Attack Extra Successes|0})t[Combat-Dice]]] @{damage_type}
-					Damage}}"></button>
-				</div>
-				
+                [[ 1t[Wound-Table] ]] for
+                [[(@{weapon_damage})t[Combat-Dice]]] @{damage_type}
+                Damage}}"></button>
             </div>
         </fieldset>
     </div>

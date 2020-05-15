@@ -418,7 +418,7 @@ input.sheet-hider[type="checkbox"] + span::before {
     text-align: center;
     display: inline-block;
     vertical-align: middle;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Pictos;
     content: ")";
     width: 14px;
     height: 14px;
@@ -812,7 +812,7 @@ input.sheet-claw[type="checkbox"] {
 input.sheet-claw[type="checkbox"] + span::before {
 	background:transparent;
 	content: '78';
-	font-family: "Courier New", Courier, monospace;
+	font-family: 'Pictos';
 	font-size:18px;
 	text-align:center;
 	margin:0;

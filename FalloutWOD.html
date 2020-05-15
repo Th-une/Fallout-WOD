@@ -2,27 +2,27 @@
     <div class="sheet-row">
         <div class="sheet-item sheet-80">
             <input type="radio" class="sheet-splat_type" name="attr_splat_type" value="Human"/><span
-                class="sheet-splat_type">Human</span>
+                class="sheet-splat_type">Character</span>
+        </div>
+        <div class="sheet-item sheet-60">
+            <input type="radio" class="sheet-splat_type" name="attr_splat_type" value="Brotherhood"/><span
+                class="sheet-splat_type">Karma</span>
         </div>
         <div class="sheet-item sheet-80">
-            <input type="radio" class="sheet-splat_type" name="attr_splat_type" value="Vampire"/><span
-                class="sheet-splat_type">Vampire</span>
+            <input type="radio" class="sheet-splat_type" name="attr_splat_type" value="Enclave"/><span
+                class="sheet-splat_type">Details</span>
         </div>
         <div class="sheet-item sheet-80">
-            <input type="radio" class="sheet-splat_type" name="attr_splat_type" value="Werewolf"/><span
-                class="sheet-splat_type">Werewolf</span>
+            <input type="radio" class="sheet-splat_type" name="attr_splat_type" value="Followers"/><span
+                class="sheet-splat_type">Companion</span>
         </div>
-        <div class="sheet-item sheet-80">
-            <input type="radio" class="sheet-splat_type" name="attr_splat_type" value="Mage"/><span
-                class="sheet-splat_type">Mage</span>
+        <div class="sheet-item sheet-60">
+            <input type="radio" class="sheet-splat_type" name="attr_splat_type" value="LoneStar" checked/><span
+                class="sheet-splat_type">Vehicle</span>
         </div>
-        <div class="sheet-item sheet-80">
-            <input type="radio" class="sheet-splat_type" name="attr_splat_type" value="Wraith" checked/><span
-                class="sheet-splat_type">Wraith</span>
-        </div>
-        <div class="sheet-item sheet-80">
-            <input type="radio" class="sheet-splat_type" name="attr_splat_type" value="Changeling"/><span
-                class="sheet-splat_type">Changeling</span>
+        <div class="sheet-item sheet-100">
+            <input type="radio" class="sheet-splat_type" name="attr_splat_type" value="Legion"/><span
+                class="sheet-splat_type">Settlement</span>
         </div>
         <div class="sheet-item sheet-80">
             <input type="radio" class="sheet-splat_type" name="attr_splat_type" value="All"/><span
@@ -112,7 +112,7 @@
                        value="&{template:wod} {{name= @{character_name} }} {{pool= @{attribute} plus @{skill} }} {{attr= @{attribute} @{attribute_select} }} {{skill= @{skill} @{skill_select} }} {{mod= Modifier @{basepool_mod} }} {{wound= Wound @{injury}}} {{result= [[?{Dice|2}d20sacs1cf20<[[@{attribute_select}+@{skill_select}+?{Difficulty|0}]]]] }}"
                        checked="checked"/>
                 <input type="radio" class="sheet-Query sheet-yes" name="attr_basepool_roll"
-                       value="&{template:wod} {{name= @{character_name} }} {{pool= @{attribute} plus @{skill} }} {{attr= @{attribute} @{attribute_select} }} {{skill= @{skill} @{skill_select} }} {{mod= Modifier @{basepool_mod} }} {{wound= Wound @{injury} }} {{result= [[!damage-group --?{dice pool|2} --d20sacs1cf20<[[@{attribute_select}+@{skill_select}+?{Difficulty|0}]]]] }}"/>
+                       value="&{template:wod} {{name= @{character_name} }} {{pool= @{attribute} plus @{skill} }} {{attr= @{attribute} @{attribute_select} }} {{skill= @{skill} @{skill_select} }} {{mod= Modifier @{basepool_mod} }} {{wound= Wound @{injury} }} {{result= [[!Damages-group --?{dice pool|2} --d20sacs1cf20<[[@{attribute_select}+@{skill_select}+?{Difficulty|0}]]]] }}"/>
                 <span class="sheet-Query sheet-no">No</span>
                 <span class="sheet-Query sheet-yes">Yes</span>
             </div>
@@ -1627,7 +1627,7 @@
         </div>
     </div>
     <br>
-    <div class="sheet-2colrow">
+    <!-- <div class="sheet-2colrow">
         <div class="sheet-col">
             <h3 align="center">Merits</h3>
             <fieldset class="repeating_merits">
@@ -1679,11 +1679,11 @@
             </fieldset>
         </div>
     </div>
-    <hr/>
-    <!--    Wraith Wounds   -->
+    <hr/> -->
+    <!--    LoneStar Wounds   -->
     <div>
         <input type="hidden" class="sheet-splat_select" name="attr_splat_passions" value="1"/>
-        <div class="sheet-splat sheet-splat_select-5">
+        <div class="sheet-splat sheet-splat_select-1">
             <h1 style="text-align: center">Wounds</h1>
             <fieldset class="repeating_passions">
                 <div class="sheet-trait">
@@ -1716,8 +1716,8 @@
             <div class="sheet-splat sheet-splat_select-1">
 
             </div>
-            <!--    Vampire   -->
-            <div class="sheet-splat sheet-splat_select-2">
+            <!--    Human   -->
+            <div class="sheet-splat sheet-splat_select-1">
                 <h3 class="sheet-center">Virtues</h3>
                 <div class="sheet-row">
                     <div class="sheet-item sheet-150">
@@ -1762,8 +1762,8 @@
                     </div>
                 </div>
             </div>
-            <!--    Werewolf   -->
-            <div class="sheet-splat sheet-splat_select-3">
+            <!--    Enclave   -->
+            <!-- <div class="sheet-splat sheet-splat_select-3">
                 <div class="sheet-row">
                     <div class="sheet-item sheet-90"><input type="text" name="attr_renown1_name"/></div>
                     <div class="sheet-item sheet-150">
@@ -1893,8 +1893,8 @@
                                class=" used"/><span></span>
                     </div>
                 </div>
-                <div class="sheet-row">
-                    <div class="sheet-item sheet-110">
+                <!-- <div class="sheet-row"> -->
+                    <!-- div class="sheet-item sheet-110">
                         <h3>Rank</h3>
                     </div>
                     <div class="sheet-item sheet-110">
@@ -1919,15 +1919,15 @@
                             <option value="13">Rokea</option>
                         </select>
                     </div>
-                </div>
+                </div> -->
 
             </div>
-            <!--    Mage   -->
+            <!--    Followers   -->
             <div class="sheet-splat sheet-splat_select-4">
 
             </div>
-            <!--    Wraith   -->
-            <div class="sheet-splat sheet-splat_select-5">
+            <!--    LoneStar   -->
+            <!-- <div class="sheet-splat sheet-splat_select-5">
                 <fieldset class="repeating_arcanoi">
                     <h3 class="sheet-center">Arcanoi</h3>
                     <div class="sheet-row">
@@ -1945,17 +1945,17 @@
                         </div>
                     </div>
                 </fieldset>
-            </div>
-            <!--    Changeling   -->
+            </div> -->
+            <!--    Legion   -->
             <div class="sheet-splat sheet-splat_select-6">
 
             </div>
         </div>
-        <div class="sheet-col sheet-center">
+        <!-- <div class="sheet-col sheet-center">
             <span class="sheet-display" name="attr_splat_type"></span>
             <input type="hidden" class="sheet-splat_select" name="attr_splat_select1" value="1"/>
             <!--    Human   -->
-            <button type="roll" class="sheet-adv" name="roll_Willpower"
+            <!-- <button type="roll" class="sheet-adv" name="roll_Willpower"
                     value="&{template:wod} {{name= @{character_name} }} {{pool= Willpower }} {{attr= Dice @{willpower} }} {{result= [[{(@{willpower}+?{Pool Mod|0})d10}>?{Difficulty|6}f1]] }}">
                 Willpower
             </button>
@@ -2000,11 +2000,11 @@
                            value="10"/><span></span>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <!--TAB Power Armor-->
-<div class="sheet-section-3">
+<!-- <div class="sheet-section-3">
     <br>
     <input type="checkbox" class="sheet-word" name="attr_switch" value="1"/><span>
         <h1 style="text-align: center">Power Armor</h1>
@@ -2013,7 +2013,7 @@
     <div class="sheet-block_a">
         <div>
             <!-- Stuff in the visible area -->
-            <div class="sheet-row">
+            <!--<div class="sheet-row">
                 <div class="sheet-item sheet-center sheet-smaller">
                     <i>Click form name to change form</i>
                 </div>
@@ -2213,19 +2213,19 @@
             <div class="sheet-item sheet-80"><input type="number" name="attr_luck" value="0"/></div>
         </div>
     </div>
-</div>
+</div> -->
 <!--TAB Gifts, Rites & Fetishes -->
-<div class="sheet-section-4">
+<!-- <div class="sheet-section-4">
     <div>
         <div>
             <span class="sheet-display" name="attr_splat_type"></span>
-            <input type="hidden" class="sheet-splat_select" name="attr_splat_select3" value="1"/>
+            <input type="hidden" class="sheet-splat_select" name="attr_splat_select3" value="1"/> -->
             <!--    Human   -->
-            <div class="sheet-splat sheet-splat_select-1">
+            <!-- <div class="sheet-splat sheet-splat_select-1">
 
-            </div>
-            <!--    Vampire   -->
-            <div class="sheet-splat sheet-splat_select-1">
+            </div> -->
+            <!--    Brotherhood   -->
+            <!-- <div class="sheet-splat sheet-splat_select-1">
                 <div>
                     <h3 class="sheet-center sheet-inline">Disciplines</h3>
                     <input type="checkbox" class="sheet-claw" name="attr_discipline_open" checked/><span></span>
@@ -2305,7 +2305,7 @@
 
                 <div>
                     <h3 class="sheet-center sheet-inline">Rituals</h3>
-                    <input type="checkbox" class="sheet-claw" name="attr_vampire_ritual_open" checked/><span></span>
+                    <input type="checkbox" class="sheet-claw" name="attr_Brotherhood_ritual_open" checked/><span></span>
                     <div class="sheet-body">
                         <fieldset class="repeating_rituals">
                             <div class="border">
@@ -2339,9 +2339,9 @@
                         </fieldset>
                     </div>
                 </div>
-            </div>
-            <!--    Werewolf   -->
-            <div class="sheet-splat sheet-splat_select-3">
+            </div> -->
+            <!--    Enclave   -->
+            <!-- <div class="sheet-splat sheet-splat_select-3">
                 <div>
                     <h3 class="sheet-center sheet-inline">Gifts</h3>
                     <input type="checkbox" class="sheet-claw" name="attr_gift_open" checked/><span></span>
@@ -2423,7 +2423,7 @@
                 </div>
                 <div>
                     <h3 class="sheet-center sheet-inline">Rites</h3>
-                    <input type="checkbox" class="sheet-claw" name="attr_werewolf_rite_open" checked/><span></span>
+                    <input type="checkbox" class="sheet-claw" name="attr_Enclave_rite_open" checked/><span></span>
                     <div class="sheet-body">
                         <fieldset class="repeating_rites">
                             <div class="border">
@@ -2473,9 +2473,9 @@
                         </fieldset>
                     </div>
                 </div>
-            </div>
-            <!--    Mage   -->
-            <div class="sheet-splat sheet-splat_select-4">
+            </div> -->
+            <!--    Followers   -->
+            <!-- <div class="sheet-splat sheet-splat_select-4">
                 <div class="border">
                     <div class="sheet-row">
                         <div class="sheet-item sheet-60">
@@ -2592,15 +2592,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <!--    Wraith   -->
-            <div class="sheet-splat sheet-splat_select-5">
+            <!--    LoneStar   -->
+            <!-- <div class="sheet-splat sheet-splat_select-5">
                 <div class="border">
-                    Wraith
+                    LoneStar
                 </div>
-            </div>
-            <!--    Changeling   -->
+            </div> -->
+            <!--    Legion   -->
             <div class="sheet-splat sheet-splat_select-6">
                 <div class="sheet-2colrow">
                     <div class="sheet-col">
@@ -2734,16 +2734,16 @@
             <div class="sheet-item sheet-160">
                 Weapon/Attack
             </div>
-            <div class="sheet-item sheet-110">
+            <div class="sheet-item sheet-100">
                 Attribute
             </div>
             <div class="sheet-item sheet-90">
                 Skill
             </div>
-            <div class="sheet-item sheet-60">
-                Attack<br>Modifier
+            <div class="sheet-item sheet-50">
+                Atk<br>Mod
             </div>
-            <div class="sheet-item sheet-60">
+            <div class="sheet-item sheet-50">
                 Damage<br>Type
             </div>
             <div class="sheet-item sheet-50">
@@ -2752,14 +2752,20 @@
             <div class="sheet-item sheet-50">
                 Range
             </div>
-            <div class="sheet-item sheet-40">
+            <div class="sheet-item sheet-30">
                 Rate
             </div>
-            <div class="sheet-item sheet-30">
+            <div class="sheet-item sheet-40">
                 Clip
             </div>
             <div class="sheet-item sheet-30">
-                Damage
+                Ammo<br>Type
+            </div>
+            <div class="sheet-item sheet-40">
+                Ammo<br>Count
+            </div>
+            <div class="sheet-item sheet-30">
+                Damages
             </div>
         </div>
         <br>
@@ -2774,7 +2780,7 @@
                     <div class="sheet-item sheet-160">
                         <input type="text" class="sheet-textbox" name="attr_weapon_name" value=""/>
                     </div>
-                    <div class="sheet-item sheet-110">
+                    <div class="sheet-item sheet-100">
                         <select class="sheet-select1" name="attr_weapon_attribute" value="0">
                             <option value="0" selected></option>
                             <option value="@{Strength}">Strength</option>
@@ -2798,11 +2804,11 @@
                             <option value="@{explosives}">Explosives</option>
                         </select>
                     </div>
-                    <div class="sheet-item sheet-60">
+                    <div class="sheet-item sheet-50">
                         <input type="number" class="sheet-textbox" name="attr_weapon_modifier" value="0"/>
                     </div>
-                    <div class="sheet-item sheet-60">
-                        <select style="width:60px;color:black;" class="sheet-textbox" name="attr_damage_type"
+                    <div class="sheet-item sheet-50">
+                        <select style="width:60px;color:black;" class="sheet-textbox" name="attr_Damages_type"
                                 value="6"/>
                         <option value="PHY" selected>PHY</option>
                         <option value="ENE">ENE</option>
@@ -2810,7 +2816,7 @@
                         <option value="POI">POI</option>
                     </div>
                     <div class="sheet-item sheet-50">
-                        <input type="number" class="sheet-textbox" name="attr_weapon_damage" value="0"/>
+                        <input type="number" class="sheet-textbox" name="attr_weapon_Damages" value="0"/>
                     </div>
                     <div class="sheet-item sheet-50">
                         <input type="number" class="sheet-textbox" name="attr_weapon_range" value="0"/></th>
@@ -2818,19 +2824,25 @@
                     <div class="sheet-item sheet-40">
                         <input type="number" class="sheet-textbox" name="attr_weapon_rate" value="0"/>
                     </div>
-                    <div class="sheet-item sheet-30">
+                    <div class="sheet-item sheet-40">
                         <input type="number" class="sheet-textbox" name="attr_weapon_clip" value="0"/>
                     </div>
                     <div class="sheet-item sheet-30">
-                        <button type="roll" class="sheet-damageroll" name="roll_weapon_damage" value="&{template:wod} {{name= @{character_name} }} {{damage= @{weapon_name} }} {{attr= Weapon @{weapon_damage} }} {{skill= Stength @{weapon_strength_damage} }}  {{mod= Extra ?{Attack Extra Successes|0} }} {{result= [[(@{weapon_damage} + @{weapon_strength_damage} + ?{Attack Extra Successes|0})t[Combat-Dice]]] @{damage_type}
-					Damage}}"></button>
+                        <input type="text" class="sheet-textbox" name="attr_ammo_type" value="0"/>
+                    </div>
+                    <div class="sheet-item sheet-40">
+                        <input type="number" class="sheet-textbox" name="attr_ammo_count" value="0"/>
                     </div>
                     <div class="sheet-item sheet-30">
-                        <button type="roll" class="sheet-weaponroll" name="roll_weapon" value="&{template:wod} {{name= @{character_name} attacks @{target|character_name} with }} {{attack= @{weapon_name} }} {{attr= Weapon @{weapon_damage} }} {{attr= Attribute @{weapon_attribute} }} {{skill= Skill @{weapon_skill}}} {{mod= Weapon @{weapon_modifier} }} {{wound= Wound @{injury} }} {{result=[[?{Dice|2}d20sacs1cf20<[[@{weapon_attribute} + @{weapon_skill} + @{weapon_modifier} + @{injury}]]]] Successes,
+                        <button type="roll" class="sheet-Damagesroll" name="roll_weapon_Damages" value="&{template:wod} {{name= @{character_name} }} {{Damages= @{weapon_name} }} {{attr= Weapon @{weapon_Damages} }}   {{mod= Extra ?{Attack Extra Successes|0} }} {{result= [[(@{weapon_Damages} + ?{Attack Extra Successes|0})t[Combat-Dice]]] @{Damages_type}
+					Damages}}"></button>
+                    </div>
+                    <div class="sheet-item sheet-30">
+                        <button type="roll" class="sheet-weaponroll" name="roll_weapon" value="&{template:wod} {{name= @{character_name} attacks @{target|character_name} with }} {{attack= @{weapon_name} }} {{attr= Weapon @{weapon_Damages} }} {{attr= Attribute @{weapon_attribute} }} {{skill= Skill @{weapon_skill}}} {{mod= Weapon @{weapon_modifier} }} {{wound= Wound @{injury} }} {{result=[[?{Dice|2}d20sacs1cf20<[[@{weapon_attribute} + @{weapon_skill} + @{weapon_modifier} + @{injury}]]]] Successes,
 				hitting the
                 [[ 1t[Wound-Table] ]] for
-                [[(@{weapon_damage})t[Combat-Dice]]] @{damage_type}
-                Damage}}"></button>
+                [[(@{weapon_Damages})t[Combat-Dice]]] @{Damages_type}
+                Damages}}"></button>
                     </div>
             </fieldset>
         </div>
@@ -2838,7 +2850,7 @@
         <br>
         <hr/>
         <!-----     Brawling     ----->
-        <h3 class="sheet-inline">Brawling & Clawing</h3>
+        <h3 class="sheet-inline">Unarmed & Martial Arts</h3>
         <input type="checkbox" class="sheet-claw" name="attr_claw-Brawling" checked/><span></span>
         <div class="sheet-body sheet-center">
 
@@ -2859,16 +2871,16 @@
                     Query
                 </div>
                 <div class="sheet-item sheet-80">
-                    Damage
+                    Damages
                 </div>
                 <div class="sheet-item sheet-60">
-                    Damage<br>Modifier
+                    Damages<br>Modifier
                 </div>
                 <div class="sheet-item sheet-60">
-                    Damage<br>Difficulty
+                    Damages<br>Difficulty
                 </div>
                 <div class="sheet-item sheet-110">
-                    Damage Type
+                    Damages Type
                 </div>
             </div>
             <br>
@@ -2897,13 +2909,13 @@
                 Strength +1
             </div>
             <div class="sheet-item sheet-60">
-                <input type="number" class="sheet-textbox" name="attr_Bite_Mod-Damage" value="0"/>
+                <input type="number" class="sheet-textbox" name="attr_Bite_Mod-Damages" value="0"/>
             </div>
             <div class="sheet-item sheet-60">
                 <input type="number" class="sheet-textbox" name="attr_Bite_Difficulty" value="6"/>
             </div>
             <div class="sheet-item sheet-110">
-                <button type="roll" name="roll_damage-Bite" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{damage= Bite }} {{attr= Bite [[1 + @{Bite_Mod-Damage}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + 1 + @{Bite_Mod-Damage} + ?{Attack Extra Successes|0})d10}>@{Bite_Difficulty}]] }} {{type= Aggravated}}">Aggravated</button>
+                <button type="roll" name="roll_Damages-Bite" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{Damages= Bite }} {{attr= Bite [[1 + @{Bite_Mod-Damages}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + 1 + @{Bite_Mod-Damages} + ?{Attack Extra Successes|0})d10}>@{Bite_Difficulty}]] }} {{type= Aggravated}}">Aggravated</button>
             </div>
         </div> -->
             <!-- <div class="sheet-row">
@@ -2931,13 +2943,13 @@
                 Strength +2
             </div>
             <div class="sheet-item sheet-60">
-                <input type="number" class="sheet-textbox" name="attr_HispoBite_Mod-Damage" value="0"/>
+                <input type="number" class="sheet-textbox" name="attr_HispoBite_Mod-Damages" value="0"/>
             </div>
             <div class="sheet-item sheet-60">
                 <input type="number" class="sheet-textbox" name="attr_HispoBite_Difficulty" value="6"/>
             </div>
             <div class="sheet-item sheet-110">
-                <button type="roll" name="roll_damage-HispoBite" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{damage= Hispo Bite }} {{attr= HispoBite [[2 + @{HispoBite_Mod-Damage}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + 2 + @{HispoBite_Mod-Damage} + ?{Attack Extra Successes|0})d10}>@{HispoBite_Difficulty}]] }} {{type= Aggravated}}">Aggravated</button>
+                <button type="roll" name="roll_Damages-HispoBite" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{Damages= Hispo Bite }} {{attr= HispoBite [[2 + @{HispoBite_Mod-Damages}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + 2 + @{HispoBite_Mod-Damages} + ?{Attack Extra Successes|0})d10}>@{HispoBite_Difficulty}]] }} {{type= Aggravated}}">Aggravated</button>
             </div>
         </div>
         <div class="sheet-row">
@@ -2965,13 +2977,13 @@
                 Special
             </div>
             <div class="sheet-item sheet-60">
-                <input type="number" class="sheet-textbox" name="attr_BodyTackle_Mod-Damage" value="0"/>
+                <input type="number" class="sheet-textbox" name="attr_BodyTackle_Mod-Damages" value="0"/>
             </div>
             <div class="sheet-item sheet-60">
                 <input type="number" class="sheet-textbox" name="attr_BodyTackle_Difficulty" value="6"/>
             </div>
             <div class="sheet-item sheet-110">
-                <button type="roll" name="roll_damage-BodyTackle" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{damage= Body Tackle }} {{attr= Body Tackle [[@{BodyTackle_Mod-Damage}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + @{BodyTackle_Mod-Damage} + ?{Attack Extra Successes|0})d10}>@{BodyTackle_Difficulty}]] }} {{type= Bashing}}">Bashing</button>
+                <button type="roll" name="roll_Damages-BodyTackle" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{Damages= Body Tackle }} {{attr= Body Tackle [[@{BodyTackle_Mod-Damages}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + @{BodyTackle_Mod-Damages} + ?{Attack Extra Successes|0})d10}>@{BodyTackle_Difficulty}]] }} {{type= Bashing}}">Bashing</button>
             </div>
         </div>
         <div class="sheet-row">
@@ -2999,13 +3011,13 @@
                 Strength +2
             </div>
             <div class="sheet-item sheet-60">
-                <input type="number" class="sheet-textbox" name="attr_Claw_Mod-Damage" value="0"/>
+                <input type="number" class="sheet-textbox" name="attr_Claw_Mod-Damages" value="0"/>
             </div>
             <div class="sheet-item sheet-60">
                 <input type="number" class="sheet-textbox" name="attr_Claw_Difficulty" value="6"/>
             </div>
             <div class="sheet-item sheet-110">
-                <button type="roll" name="roll_damage-Claw" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{damage= Claw }} {{attr= Claw [[2 + @{Claw_Mod-Damage}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + 2 + @{Claw_Mod-Damage} + ?{Attack Extra Successes|0})d10}>@{Claw_Difficulty}]] }} {{type= Aggravated}}">Aggravated</button>
+                <button type="roll" name="roll_Damages-Claw" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{Damages= Claw }} {{attr= Claw [[2 + @{Claw_Mod-Damages}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + 2 + @{Claw_Mod-Damages} + ?{Attack Extra Successes|0})d10}>@{Claw_Difficulty}]] }} {{type= Aggravated}}">Aggravated</button>
             </div>
         </div>
         <div class="sheet-row">
@@ -3034,13 +3046,13 @@
                 Strength
             </div>
             <div class="sheet-item sheet-60">
-                <input type="number" class="sheet-textbox" name="attr_Grapple_Mod-Damage" value="0"/>
+                <input type="number" class="sheet-textbox" name="attr_Grapple_Mod-Damages" value="0"/>
             </div>
             <div class="sheet-item sheet-60">
                 <input type="number" class="sheet-textbox" name="attr_Grapple_Difficulty" value="6"/>
             </div>
             <div class="sheet-item sheet-110">
-                <button type="roll" name="roll_damage-Grapple" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{damage= Grapple }} {{attr= Grapple [[@{Grapple_Mod-Damage}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + @{Grapple_Mod-Damage} + ?{Attack Extra Successes|0})d10}>@{Grapple_Difficulty}]] }} {{type= Bashing}}">Bashing</button>
+                <button type="roll" name="roll_Damages-Grapple" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{Damages= Grapple }} {{attr= Grapple [[@{Grapple_Mod-Damages}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + @{Grapple_Mod-Damages} + ?{Attack Extra Successes|0})d10}>@{Grapple_Difficulty}]] }} {{type= Bashing}}">Bashing</button>
             </div>
         </div>
         <div class="sheet-row">
@@ -3068,13 +3080,13 @@
                 Strength +1
             </div>
             <div class="sheet-item sheet-60">
-                <input type="number" class="sheet-textbox" name="attr_Kick_Mod-Damage" value="0"/>
+                <input type="number" class="sheet-textbox" name="attr_Kick_Mod-Damages" value="0"/>
             </div>
             <div class="sheet-item sheet-60">
                 <input type="number" class="sheet-textbox" name="attr_Kick_Difficulty" value="6"/>
             </div>
             <div class="sheet-item sheet-110">
-                <button type="roll" name="roll_damage-Kick" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{damage= Kick }} {{attr= Kick [[1 + @{Kick_Mod-Damage}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + 1 + @{Kick_Mod-Damage} + ?{Attack Extra Successes|0})d10}>@{Kick_Difficulty}]] }} {{type= Bashing}}">Bashing</button>
+                <button type="roll" name="roll_Damages-Kick" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{Damages= Kick }} {{attr= Kick [[1 + @{Kick_Mod-Damages}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + 1 + @{Kick_Mod-Damages} + ?{Attack Extra Successes|0})d10}>@{Kick_Difficulty}]] }} {{type= Bashing}}">Bashing</button>
             </div>
         </div> -->
             <div class="sheet-row">
@@ -3098,17 +3110,156 @@
                     Strength
                 </div>
                 <div class="sheet-item sheet-60">
-                    <input type="number" class="sheet-textbox" name="attr_Punch_Mod-Damage" value="0"/>
+                    <input type="number" class="sheet-textbox" name="attr_Punch_Mod-Damages" value="0"/>
                 </div>
                 <div class="sheet-item sheet-110">
-                    <button type="roll" name="roll_damage-Punch" class="sheet-adv"
-                            value="&{template:wod} {{name= @{character_name} }} {{damage= Punch }} {{attr= Punch [[@{Punch_Mod-Damage}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} +  @{Punch_Mod-Damage} + ?{Attack Extra Successes|0})d10}>@{Punch_Difficulty}]] }} {{type= Bashing}}">
+                    <button type="roll" name="roll_Damages-Punch" class="sheet-adv"
+                            value="&{template:wod} {{name= @{character_name} }} {{Damages= Punch }} {{attr= Punch [[@{Punch_Mod-Damages}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} +  @{Punch_Mod-Damages} + ?{Attack Extra Successes|0})d10}>@{Punch_Difficulty}]] }} {{type= Bashing}}">
                         Bashing
                     </button>
                 </div>
             </div>
         </div>
         <hr/>
+        <div class="sheet-body" style="margin-top: 10px">
+            <table border="1" style="width:100%">
+                <tr style="text-align: center;">
+                    <td>Hit</td>
+                    <td>Location</td>
+                    <td>Armor</td>
+                    <td>Phy DR</td>
+                    <td>Ene DR</td>
+                    <td>Rad DR</td>
+                    <td>Poi DR</td>
+                    <td>Condition</td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>1&nbsp;
+                    <td>Eyes(+4)</td>
+                    <td><input style=width:250px type="text" name="attr_Eyes_Armor"</td>
+                    <td><input style=width:40px type="number" name="attr_Eyes_Phy_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Eyes_Ene_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Eyes_Rad_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Eyes_Poi_DR"/></td>
+                    <td><select style="width:95px;color:black;" name="attr_Eyes_Status" title="Eyes Status">
+                        <option value="Healthy" selected>Healthy</option>
+                        <option value="Wounded">Wounded</option>
+                        <option value="Crippled">Crippled</option>
+                    </select></td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>2&nbsp;
+                    <td>Head(+3)</td>
+                    <td><input style=width:250px type="text" name="attr_Head_Armor"</td>
+                    <td><input style=width:40px type="number" name="attr_Head_Phy_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Head_Ene_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Head_Rad_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Head_Poi_DR"/></td>
+                    <td><select style="width:95px;color:black;" name="attr_Head_Status" title="Head Status">
+                        <option value="Healthy" selected>Healthy</option>
+                        <option value="Wounded">Wounded</option>
+                        <option value="Crippled">Crippled</option>
+                    </select></td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>3-5&nbsp;
+                    <td>R. Arm</td>
+                    <td><input style=width:250px type="text" name="attr_RArm_Armor"</td>
+                    <td><input style=width:40px type="number" name="attr_RArm_Phy_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_RArm_Ene_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_RArm_Rad_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_RArm_Poi_DR"/></td>
+                    <td><select style="width:95px;color:black;" name="attr_RArm_Status"
+                                title="Right Arm Status">
+                        <option value="Healthy" selected>Healthy</option>
+                        <option value="Wounded">Wounded</option>
+                        <option value="Crippled">Crippled</option>
+                    </select></td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>6-8&nbsp;
+                    <td>L. Arm</td>
+                    <td><input style=width:250px type="text" name="attr_LArm_Armor"</td>
+                    <td><input style=width:40px type="number" name="attr_LArm_Phy_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_LArm_Ene_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_LArm_Rad_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_LArm_Poi_DR"/></td>
+                    <td><select style="width:95px;color:black;" name="attr_LArm_Status" title="Left Arm Status">
+                        <option value="Healthy" selected>Healthy</option>
+                        <option value="Wounded">Wounded</option>
+                        <option value="Crippled">Crippled</option>
+                    </select></td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>9-12&nbsp;
+                    <td>Torso</td>
+                    <td><input style=width:250px type="text" name="attr_Torso_Armor"</td>
+                    <td><input style=width:40px type="number" name="attr_Torso_Phy_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Torso_Ene_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Torso_Rad_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Torso_Poi_DR"/></td>
+                    <td><select style="width:95px;color:black;" name="attr_Torso_Status" title="Torso Status">
+                        <option value="Healthy" selected>Healthy</option>
+                        <option value="Wounded">Wounded</option>
+                        <option value="Crippled">Crippled</option>
+                    </select></td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>13-14&nbsp;
+                    <td>Groin(+2)</td>
+                    <td><input style=width:250px type="text" name="attr_Groin_Armor"</td>
+                    <td><input style=width:40px type="number" name="attr_Groin_Phy_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Groin_Ene_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Groin_Rad_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Groin_Poi_DR"/></td>
+                    <td><select style="width:95px;color:black;" name="attr_Groin_Status" title="Groin Status">
+                        <option value="Healthy" selected>Healthy</option>
+                        <option value="Wounded">Wounded</option>
+                        <option value="Crippled">Crippled</option>
+                    </select></td>
+                </tr>
+
+                <tr style="text-align: center;">
+                    <td>15-17&nbsp;
+                    <td>R. Leg</td>
+                    <td><input style=width:250px type="text" name="attr_RLeg_Armor"</td>
+                    <td><input style=width:40px type="number" name="attr_RLeg_Phy_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_RLeg_Ene_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_RLeg_Rad_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_RLeg_Poi_DR"/></td>
+                    <td><select style="width:95px;color:black;" name="attr_RLeg_Status"
+                                title="Right Leg Status">
+                        <option value="Healthy" selected>Healthy</option>
+                        <option value="Wounded">Wounded</option>
+                        <option value="Crippled">Crippled</option>
+                    </select></td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>18-20&nbsp;
+                    <td>L. Leg</td>
+                    <td><input style=width:250px type="text" name="attr_LLeg_Armor"</td>
+                    <td><input style=width:40px type="number" name="attr_LLeg_Phy_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_LLeg_Ene_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_LLeg_Rad_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_LLeg_Poi_DR"/></td>
+                    <td><select style="width:95px;color:black;" name="attr_LLeg_Status" title="Left Leg Status">
+                        <option value="Healthy" selected>Healthy</option>
+                        <option value="Wounded">Wounded</option>
+                        <option value="Crippled">Crippled</option>
+                    </select></td>
+                </tr>
+                <tr style="text-align: center;">
+                    <td>&nbsp;</td>
+                    <td>Underarmor</td>
+                    <td><input style=width:250px type="text" name="attr_Under_Armor"</td>
+                    <td><input style=width:40px type="number" name="attr_Under_Phy_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Under_Ene_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Under_Rad_DR"/></td>
+                    <td><input style=width:40px type="number" name="attr_Under_Poi_DR"/></td>
+                    <td></td>
+                </tr>
+            </table>
+    </div>
         <!-----     Health & Armor     ----->
         <div class="sheet-2colrow">
             <div>
@@ -3307,7 +3458,7 @@
                     </div>
                 </div>
             </div>
-            <div class="sheet-col">
+            <!-- <div class="sheet-col">
                 <h3 class="sheet-center">Armor & Soak</h3>
                 <div class="sheet-row">
                     <div class="sheet-item sheet-110">
@@ -3451,147 +3602,9 @@
                     </div>
                 </div>
             </div>
-            </div>
+            </div> -->
 
-            <div class="sheet-body" style="margin-top: 10px">
-                <table border="1" style="width:100%">
-                    <tr style="text-align: center;">
-                        <td>Hit</td>
-                        <td>Location</td>
-                        <td>Armor</td>
-                        <td>Phy DR</td>
-                        <td>Ene DR</td>
-                        <td>Rad DR</td>
-                        <td>Poi DR</td>
-                        <td>Condition</td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td>1&nbsp;
-                        <td>Eyes(+4)</td>
-                        <td><input style=width:250px type="text" name="attr_Eyes_Armor"</td>
-                        <td><input style=width:40px type="number" name="attr_Eyes_Phy_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Eyes_Ene_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Eyes_Rad_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Eyes_Poi_DR"/></td>
-                        <td><select style="width:95px;color:black;" name="attr_Eyes_Status" title="Eyes Status">
-                            <option value="Healthy" selected>Healthy</option>
-                            <option value="Wounded">Wounded</option>
-                            <option value="Crippled">Crippled</option>
-                        </select></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td>2&nbsp;
-                        <td>Head(+3)</td>
-                        <td><input style=width:250px type="text" name="attr_Head_Armor"</td>
-                        <td><input style=width:40px type="number" name="attr_Head_Phy_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Head_Ene_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Head_Rad_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Head_Poi_DR"/></td>
-                        <td><select style="width:95px;color:black;" name="attr_Head_Status" title="Head Status">
-                            <option value="Healthy" selected>Healthy</option>
-                            <option value="Wounded">Wounded</option>
-                            <option value="Crippled">Crippled</option>
-                        </select></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td>3-5&nbsp;
-                        <td>R. Arm</td>
-                        <td><input style=width:250px type="text" name="attr_RArm_Armor"</td>
-                        <td><input style=width:40px type="number" name="attr_RArm_Phy_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_RArm_Ene_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_RArm_Rad_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_RArm_Poi_DR"/></td>
-                        <td><select style="width:95px;color:black;" name="attr_RArm_Status"
-                                    title="Right Arm Status">
-                            <option value="Healthy" selected>Healthy</option>
-                            <option value="Wounded">Wounded</option>
-                            <option value="Crippled">Crippled</option>
-                        </select></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td>6-8&nbsp;
-                        <td>L. Arm</td>
-                        <td><input style=width:250px type="text" name="attr_LArm_Armor"</td>
-                        <td><input style=width:40px type="number" name="attr_LArm_Phy_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_LArm_Ene_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_LArm_Rad_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_LArm_Poi_DR"/></td>
-                        <td><select style="width:95px;color:black;" name="attr_LArm_Status" title="Left Arm Status">
-                            <option value="Healthy" selected>Healthy</option>
-                            <option value="Wounded">Wounded</option>
-                            <option value="Crippled">Crippled</option>
-                        </select></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td>9-12&nbsp;
-                        <td>Torso</td>
-                        <td><input style=width:250px type="text" name="attr_Torso_Armor"</td>
-                        <td><input style=width:40px type="number" name="attr_Torso_Phy_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Torso_Ene_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Torso_Rad_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Torso_Poi_DR"/></td>
-                        <td><select style="width:95px;color:black;" name="attr_Torso_Status" title="Torso Status">
-                            <option value="Healthy" selected>Healthy</option>
-                            <option value="Wounded">Wounded</option>
-                            <option value="Crippled">Crippled</option>
-                        </select></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td>13-14&nbsp;
-                        <td>Groin(+2)</td>
-                        <td><input style=width:250px type="text" name="attr_Groin_Armor"</td>
-                        <td><input style=width:40px type="number" name="attr_Groin_Phy_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Groin_Ene_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Groin_Rad_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Groin_Poi_DR"/></td>
-                        <td><select style="width:95px;color:black;" name="attr_Groin_Status" title="Groin Status">
-                            <option value="Healthy" selected>Healthy</option>
-                            <option value="Wounded">Wounded</option>
-                            <option value="Crippled">Crippled</option>
-                        </select></td>
-                    </tr>
-
-                    <tr style="text-align: center;">
-                        <td>15-17&nbsp;
-                        <td>R. Leg</td>
-                        <td><input style=width:250px type="text" name="attr_RLeg_Armor"</td>
-                        <td><input style=width:40px type="number" name="attr_RLeg_Phy_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_RLeg_Ene_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_RLeg_Rad_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_RLeg_Poi_DR"/></td>
-                        <td><select style="width:95px;color:black;" name="attr_RLeg_Status"
-                                    title="Right Leg Status">
-                            <option value="Healthy" selected>Healthy</option>
-                            <option value="Wounded">Wounded</option>
-                            <option value="Crippled">Crippled</option>
-                        </select></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td>18-20&nbsp;
-                        <td>L. Leg</td>
-                        <td><input style=width:250px type="text" name="attr_LLeg_Armor"</td>
-                        <td><input style=width:40px type="number" name="attr_LLeg_Phy_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_LLeg_Ene_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_LLeg_Rad_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_LLeg_Poi_DR"/></td>
-                        <td><select style="width:95px;color:black;" name="attr_LLeg_Status" title="Left Leg Status">
-                            <option value="Healthy" selected>Healthy</option>
-                            <option value="Wounded">Wounded</option>
-                            <option value="Crippled">Crippled</option>
-                        </select></td>
-                    </tr>
-                    <tr style="text-align: center;">
-                        <td>&nbsp;</td>
-                        <td>Underarmor</td>
-                        <td><input style=width:250px type="text" name="attr_Under_Armor"</td>
-                        <td><input style=width:40px type="number" name="attr_Under_Phy_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Under_Ene_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Under_Rad_DR"/></td>
-                        <td><input style=width:40px type="number" name="attr_Under_Poi_DR"/></td>
-                        <td></td>
-                    </tr>
-                </table>
-        </div>
+            
 
             <div>
                 <h3 style="display:inline">Appearance</h3><input type="checkbox" class="sheet-claw" name="attr_claw-1"
@@ -3612,7 +3625,7 @@
                     </div>
                     <div class="sheet-2colrow">
                         <div class="sheet-col">
-                            <h3 class="sheet-center">Metis Deformitiy</h3>
+                            <h3 class="sheet-center">Deformities</h3>
                             <textarea name="attr_Metis_Deformitiy" class="textarea2"
                                       placeholder="If you have one (or more)"></textarea>
                         </div>
@@ -3690,7 +3703,7 @@
             </div>
         </div>
         <!--TAB Pack-->
-        <div class="sheet-section-6">
+        <div class="sheet-section-1">
             <br>
             <h1 style="text-align: center">Pack Totem, Members and Tactics</h1>
             <div>
@@ -3860,11 +3873,11 @@
             <rolltemplate class="sheet-rolltemplate-wod">
                 <table>
 
-                    {{#damage}}
+                    {{#Damages}}
                     <tr>
-                        <th>{{name}} deals damage with {{damage}}</th>
+                        <th>{{name}} deals Damages with {{Damages}}</th>
                     </tr>
-                    {{/damage}}
+                    {{/Damages}}
 
                     {{#attack}}
                     <tr>
@@ -4183,7 +4196,7 @@ on("change:splat_type sheet:opened", function() {
                 splat_passions: 1
             })
         }
-        else if (values.splat_type == 'Vampire') {
+        else if (values.splat_type == 'Brotherhood') {
             setAttrs({
                 splat_select: 2,
                 splat_select1: 2,
@@ -4195,7 +4208,7 @@ on("change:splat_type sheet:opened", function() {
                 splat_passions: 2
             })
         }
-        else if (values.splat_type == 'Werewolf') {
+        else if (values.splat_type == 'Enclave') {
             setAttrs({
                 splat_select: 3,
                 splat_select1: 3,
@@ -4207,7 +4220,7 @@ on("change:splat_type sheet:opened", function() {
                 splat_passions: 3
             })
         }
-        else if (values.splat_type == 'Mage') {
+        else if (values.splat_type == 'Followers') {
             setAttrs({
                 splat_select: 4,
                 splat_select1: 4,
@@ -4219,7 +4232,7 @@ on("change:splat_type sheet:opened", function() {
                 splat_passions: 4
             })
         }
-        else if (values.splat_type == 'Wraith') {
+        else if (values.splat_type == 'LoneStar') {
             setAttrs({
                 splat_select: 5,
                 splat_select1: 5,
@@ -4231,7 +4244,7 @@ on("change:splat_type sheet:opened", function() {
                 splat_passions: 5
             })
         }
-        else if (values.splat_type == 'Changeling') {
+        else if (values.splat_type == 'Legion') {
             setAttrs({
                 splat_select: 6,
                 splat_select1: 6,

@@ -356,11 +356,11 @@ select.sheet-select1 {
 	margin-top:10px;
 }
 .charsheet {
-	font-family: 'RufscriptRegular';
+	font-family: "Courier New", Courier, monospace;
 	text-shadow: 0em 0em 0.3em white, 0em 0em 0.3em white, 0em 0em 0.3em white, 0em 0em 0.3em white, 0em 0em 0.3em white;
 }
 @font-face {
-	font-family: 'RufscriptRegular';
+	font-family: "Courier New", Courier, monospace;
 	src: url('http://openfontlibrary.org/assets/fonts/rufscript/92112519f91e7a5ab80261a017c09b72/f886671cdc88e2725676a457e14e8512/RufscriptRegular.ttf');
 	font-weight: normal;
 	font-style: normal;
@@ -418,7 +418,7 @@ input.sheet-hider[type="checkbox"] + span::before {
     text-align: center;
     display: inline-block;
     vertical-align: middle;
-    font-family: 'Pictos';
+    font-family: "Courier New", Courier, monospace;
     content: ")";
     width: 14px;
     height: 14px;
@@ -631,7 +631,7 @@ input.sheet-aggravateddot:checked ~ span.sheet-aggravateddot {
 	background-size: 100%;
 }
 .sheet-bashingdot:before {
-	font-family: "Candal", fantasy;
+	font-family: "Courier New", Courier, monospace;
 	content:"/";
 	font-weight: 900;
 	font-size: 20px;
@@ -723,7 +723,7 @@ input.sheet-paradox:checked ~ span.sheet-paradox {
 	background-size: 100%;
 }
 .sheet-quintessence:before {
-	font-family: 'Pictos';
+	font-family: "Courier New", Courier, monospace;
 	content:"3";
 	font-weight: 900;
 	font-size: 14px;
@@ -740,7 +740,7 @@ input.sheet-paradox:checked ~ span.sheet-paradox {
 	background-size: 100%;
 }
 .sheet-paradox:before {
-	font-family: 'Pictos';
+	font-family: "Courier New", Courier, monospace;
 	content:"*";
 	font-weight: 900;
 	font-size: 14px;
@@ -812,7 +812,7 @@ input.sheet-claw[type="checkbox"] {
 input.sheet-claw[type="checkbox"] + span::before {
 	background:transparent;
 	content: '78';
-	font-family: 'Pictos';
+	font-family: "Courier New", Courier, monospace;
 	font-size:18px;
 	text-align:center;
 	margin:0;
@@ -1049,7 +1049,7 @@ input.sheet-zero[type="radio"] + span::before{
     z-index: 2;
     background: none;
     border: none;
-    font-family: pictos;
+    font-family: "Courier New", Courier, monospace;
     font-size: 20px;
     display: none;
 }
@@ -1058,7 +1058,7 @@ input.sheet-zero[type="radio"] + span::before{
     content: "";
 }
 .charsheet button[type=roll] label.sheet-diced4 {
-    font-family: 'Pictos Three';
+    font-family: "Courier New", Courier, monospace;
     
 }
 .charsheet button[type=roll].sheet-output:before {
@@ -1138,7 +1138,7 @@ button[type=roll].sheet-damageroll:before {
 button[type=roll].sheet-damageroll {
 	background-image: none;
 	background: #000000;
-	font-family:"RufscriptRegular";
+	font-family: "Courier New", Courier, monospace;
 	color: #FFFFFF;
 	font-size:1.4em;
 	font-weight:700;
@@ -1165,7 +1165,7 @@ button[type=roll].sheet-weaponroll:before {
 button[type=roll].sheet-weaponroll {
 	background-image: none;
 	background: #FF0000;
-	font-family:"RufscriptRegular";
+	font-family: "Courier New", Courier, monospace;
 	color: #000000;
 	font-size:1.4em;
 	font-weight:700;

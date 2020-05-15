@@ -2639,7 +2639,7 @@
             </div>
         </div>
         <br>
-        <div class="sheet-row">
+        <!-- <div class="sheet-row">
             <div class="sheet-item sheet-110">
                 <button type="roll" class="sheet-adv" name="roll_bite" value="&{template:wod} {{name= @{character_name} }} {{attack= Bite }} {{attr= Agility @{Agility} }} {{mod= Modifier @{Bite_Mod-Attack} }} {{skill= Unarmed @{Unarmed}}} {{mod= Weapon @{Bite_Mod-Attack} }} {{wound= Wound @{injury} }} {{result= [[{(@{Agility} + @{Unarmed} + @{Bite_Mod-Attack} + @{injury})d10}>@{Bite_At_Difficulty}f1]] }}">Bite</button>
             </div>
@@ -2672,8 +2672,8 @@
             <div class="sheet-item sheet-110">
                 <button type="roll" name="roll_damage-Bite" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{damage= Bite }} {{attr= Bite [[1 + @{Bite_Mod-Damage}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + 1 + @{Bite_Mod-Damage} + ?{Attack Extra Successes|0})d10}>@{Bite_Difficulty}]] }} {{type= Aggravated}}">Aggravated</button>
             </div>
-        </div>
-        <div class="sheet-row">
+        </div> -->
+        <!-- <div class="sheet-row">
             <div class="sheet-item sheet-110">
                 <button type="roll" class="sheet-adv" name="roll_Hispobite" value="&{template:wod} {{name= @{character_name} }} {{attack= Hispo Bite }} {{attr= Agility @{Agility} }} {{skill= Unarmed @{Unarmed}}} {{mod= Weapon @{HispoBite_Mod-Attack} }} {{wound= Wound @{injury} }} {{result= [[{(@{Agility} + @{Unarmed} + @{HispoBite_Mod-Attack} + @{injury})d10}>@{HispoBite_At_Difficulty}f1]] }}">Hispo Bite</button>
             </div>
@@ -2843,13 +2843,16 @@
             <div class="sheet-item sheet-110">
                 <button type="roll" name="roll_damage-Kick" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{damage= Kick }} {{attr= Kick [[1 + @{Kick_Mod-Damage}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} + 1 + @{Kick_Mod-Damage} + ?{Attack Extra Successes|0})d10}>@{Kick_Difficulty}]] }} {{type= Bashing}}">Bashing</button>
             </div>
-        </div>
+        </div> -->
         <div class="sheet-row">
             <div class="sheet-item sheet-110">
-                <button type="roll" class="sheet-adv" name="roll_Punch" value="&{template:wod} {{name= @{character_name} }} {{attack= Punch }} {{attr= Agility @{Agility} }} {{skill= Unarmed @{Unarmed}}} {{mod= Weapon @{Punch_Mod-Attack} }} {{wound= Wound @{injury} }} {{result= [[{(@{Agility} + @{Unarmed} + @{Punch_Mod-Attack} + @{injury})d10}>@{Punch_At_Difficulty}f1]] }}">Punch</button>
+                <button type="roll" class="sheet-adv" name="roll_Punch" value="&{template:wod} {{name= @{character_name} }} {{attack= Punch }} {{attr= Strength @{Strength} }} {{skill= Unarmed @{Unarmed}}} {{mod= Weapon @{Punch_Mod-Attack} }} {{wound= Wound @{injury} }} {{result= [[?{Dice|2}d20sacs1cf20< [[@{Strength} + @{Unarmed} + @{Punch_Mod-Attack} + @{injury}]]]] Successes,
+                hitting the
+                [[ 1t[Wound-Table] ]]
+                }}">Punch</button>
             </div>
             <div class="sheet-item sheet-90">
-                Dex + Unarmed
+                STR + Unarmed
             </div>
             <div class="sheet-item sheet-60">
                 <input type="number" class="sheet-textbox" name="attr_Punch_Mod-Attack" value="0"/>
@@ -2857,22 +2860,11 @@
             <div class="sheet-item sheet-60">
                 <input type="number" class="sheet-textbox" name="attr_Punch_At_Diff" value="6"/>
             </div>
-            <div class="sheet-item sheet-40">
-                <div class="sheet-Query">
-                    <input type="radio" class="sheet-Query sheet-no" name="attr_Punch_At_Difficulty" value="@{Punch_At_Diff}" checked="checked" />
-                    <input type="radio" class="sheet-Query sheet-yes" name="attr_Punch_At_Difficulty" value="?{Attack Difficulty|6}" />
-                    <span class="sheet-Query sheet-yes">Yes</span>
-                    <span class="sheet-Query sheet-no">No</span>
-                </div>
-            </div>
             <div class="sheet-item sheet-80">
                 Strength
             </div>
             <div class="sheet-item sheet-60">
                 <input type="number" class="sheet-textbox" name="attr_Punch_Mod-Damage" value="0"/>
-            </div>
-            <div class="sheet-item sheet-60">
-                <input type="number" class="sheet-textbox" name="attr_Punch_Difficulty" value="6"/>
             </div>
             <div class="sheet-item sheet-110">
                 <button type="roll" name="roll_damage-Punch" class="sheet-adv" value="&{template:wod} {{name= @{character_name} }} {{damage= Punch }} {{attr= Punch [[@{Punch_Mod-Damage}]] }} {{skill= Strength @{Strength} }} {{mod= Successes ?{Attack Extra Successes|0} }}  {{result= [[{(@{Strength} +  @{Punch_Mod-Damage} + ?{Attack Extra Successes|0})d10}>@{Punch_Difficulty}]] }} {{type= Bashing}}">Bashing</button>
@@ -3169,129 +3161,122 @@
             </div>
         </div><div class="sheet-col">
         <h3 class="sheet-center">Armor & Soak</h3>
-            <div class="sheet-row">
-                <div class="sheet-item sheet-110">
-                    Armor Type
-                </div>
-                <div class="sheet-item sheet-60">
-                    Rating
-                </div>
-                <div class="sheet-item sheet-110">
-                    Agility Penalty
-                </div>
-            </div>
-            <div class="sheet-row">
-                <div class="sheet-item sheet-110">
-                    <input type="text" name="attr_armor-name"/>
-                </div>
-                <div class="sheet-item sheet-60">
-                    <input type="number" name="attr_armor-Rating"/>
-                </div>
-                <div class="sheet-item sheet-110">
-                    <input type="number" name="attr_armor-Agility_Penalty"/>
-                </div>
-            </div>
-            <br>
-            <div class="sheet-row">
-                <div class="sheet-item sheet-80">
-                    Soak
-                </div>
-                <div class="sheet-item sheet-60">
-                    Endurance
-                </div>
-                <div class="sheet-item sheet-60">
-                    Modifier
-                </div>
-                <div class="sheet-item sheet-60">
-                    Difficulty
-                </div>
-                <div class="sheet-item sheet-90">
-                    Apply Armor?
-                </div>
-            </div>
-            <div class="sheet-row">
-                <div class="sheet-item sheet-80">
-                    <button type='roll' class="sheet-btn" name="attr_soak_Bashing" value="@{Armor_toggle-Bashing}">Bashing</button>
-                </div>
-                <div class="sheet-item sheet-60">
-                    <span class="sheet-display" name="attr_endurance"></span>
-                </div>
-                <div class="sheet-item sheet-60">
-                    <input type="number" name="attr_Soak_mod-Bashing" value="0" />
-                </div>
-                <div class="sheet-item sheet-60">
-                    <input type="number" name="attr_Soak_diff-Bashing" value="6" />
-                </div>
-                <div class="sheet-item sheet-60">
-                    <div class="sheet-Query">
-                        <input type="radio" class="sheet-Query sheet-no" name="attr_Armor_toggle-Bashing" value="&{template:wod} {{name= @{character_name} }} {{pool= Bashing Soak}} {{attr= Endurance [[@{Endurance}]] }} {{mod= Modifier [[@{Soak_mod-Bashing}]] }} {{result= [[ {(@{Endurance} + @{Soak_mod-Bashing} )d10}>@{Soak_diff-Bashing}f1 ]] }}" checked="checked" />
-                        <input type="radio" class="sheet-Query sheet-yes" name="attr_Armor_toggle-Bashing" value="&{template:wod} {{name= @{character_name} }} {{skill= Armor [[@{armor-Rating}]] }} {{pool= Bashing Soak}} {{attr= Endurance [[@{Endurance}]] }} {{mod= Modifier [[@{Soak_mod-Bashing}]] }} {{result= [[ {(@{Endurance} + @{Soak_mod-Bashing} + @{armor-Rating})d10}>@{Soak_diff-Bashing}f1 ]] }}" />
-                        <span class="sheet-Query sheet-yes">Yes</span>
-                        <span class="sheet-Query sheet-no">No</span>
-                    </div>
-                </div>
-            </div>
-            <div class="sheet-row">
-                <div class="sheet-item sheet-80">
-                    <button type='roll' class="sheet-btn" name="attr_soak_Lethal" value="@{Armor_toggle-Lethal}">Lethal</button>
-                </div>
-                <div class="sheet-item sheet-60">
-                    <span class="sheet-display" name="attr_endurance"></span>
-                </div>
-                <div class="sheet-item sheet-60">
-                    <input type="number" name="attr_Soak_mod-Lethal" value="0" />
-                </div>
-                <div class="sheet-item sheet-60">
-                    <input type="number" name="attr_Soak_diff-Lethal" value="6" />
-                </div>
-                <div class="sheet-item sheet-90">
-                    <div class="sheet-Query">
-                        <input type="radio" class="sheet-Query sheet-no" name="attr_Armor_toggle-Lethal" value="&{template:wod} {{name= @{character_name} }} {{pool= Lethal Soak}} {{attr= Endurance [[@{Endurance}]] }} {{mod= Modifier [[@{Soak_mod-Lethal}]] }} {{result= [[ {(@{Endurance} + @{Soak_mod-Lethal} )d10}>@{Soak_diff-Lethal}f1 ]] }}" checked="checked" />
-                        <input type="radio" class="sheet-Query sheet-yes" name="attr_Armor_toggle-Lethal" value="&{template:wod} {{name= @{character_name} }} {{skill= Armor [[@{armor-Rating}]] }} {{pool= Lethal Soak}} {{attr= Endurance [[@{Endurance}]] }} {{mod= Modifier [[@{Soak_mod-Lethal}]] }} {{result= [[ {(@{Endurance} + @{Soak_mod-Lethal} + @{armor-Rating})d10}>@{Soak_diff-Lethal}f1 ]] }}" />
-                        <span class="sheet-Query sheet-yes">Yes</span>
-                        <span class="sheet-Query sheet-no">No</span>
-                    </div>
-                </div>
-            </div>
-            <div class="sheet-row">
-                <div class="sheet-item sheet-80">
-                    <button type='roll' class="sheet-btn" name="attr_soak_Aggravated" value="@{Armor_toggle-Aggravated}">Aggravated</button>
-                </div>
-                <div class="sheet-item sheet-60">
-                    <span class="sheet-display" name="attr_endurance"></span>
-                </div>
-                <div class="sheet-item sheet-60">
-                    <input type="number" name="attr_Soak_mod-Aggravated" value="0" />
-                </div>
-                <div class="sheet-item sheet-60">
-                    <input type="number" name="attr_Soak_diff-Aggravated" value="6" />
-                </div>
-                <div class="sheet-item sheet-90">
-                    <div class="sheet-Query">
-                        <input type="radio" class="sheet-Query sheet-no" name="attr_Armor_toggle-Aggravated" value="&{template:wod} {{name= @{character_name} }} {{pool= Aggravated Soak}} {{attr= Endurance [[@{Endurance}]] }} {{mod= Modifier [[@{Soak_mod-Aggravated}]] }} {{result= [[ {(@{Endurance} + @{Soak_mod-Aggravated} )d10}>@{Soak_diff-Aggravated}f1 ]] }}" checked="checked" />
-                        <input type="radio" class="sheet-Query sheet-yes" name="attr_Armor_toggle-Aggravated" value="&{template:wod} {{name= @{character_name} }} {{skill= Armor [[@{armor-Rating}]] }} {{pool= Aggravated Soak}} {{attr= Endurance [[@{Endurance}]] }} {{mod= Modifier [[@{Soak_mod-Aggravated}]] }} {{result= [[ {(@{Endurance} + @{Soak_mod-Aggravated} + @{armor-Rating})d10}>@{Soak_diff-Aggravated}f1 ]] }}" />
-                        <span class="sheet-Query sheet-yes">Yes</span>
-                        <span class="sheet-Query sheet-no">No</span>
-                    </div>
-                </div>
-            </div>
-            <div class="sheet-row">
-                <div class="sheet-item sheet-80">
-                    <button type='roll' class="sheet-btn" name="attr_soak_armor" value="&{template:wod} {{name= @{character_name} }} {{pool= Armor Only Soak}} {{attr= Armor [[@{armor-Rating}]] }} {{result= [[ {(@{armor-Rating})d10}>@{Soak_diff-armor}f1 ]]}} ">Armor Only</button>
-                </div>
-                <div class="sheet-item sheet-60">
-                    <span class="sheet-display" name="attr_armor-Rating"></span>
-                </div>
-                <div class="sheet-item sheet-60">
-                    <input type="number" name="attr_Soak_mod-armor" value="0" />
-                </div>
-                <div class="sheet-item sheet-60">
-                    <input type="number" name="attr_Soak_diff-armor" value="6" />
-                </div>
-                <div class="sheet-item sheet-90">
-
-                </div>
-            </div>
+        <div class="sheet-col">
+            <table border="1" style="width:100%">
+                <tr style="text-align: center;">
+                    <td>Hit</td>
+                    <td>Location</td>
+                    <td>Phy DR</td>
+                    <td>Ene DR</td>
+                    <td>Rad DR</td>
+                    <td>Poi DR</td>
+                    <td>Condition</td>
+                </tr>
+                    <tr style="text-align: center;">
+                        <td>1&nbsp;
+                        <td>Eyes(+4)</td>
+                        <td><input style=width:40px type="number" name="attr_Eyes_Phy_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_Eyes_Ene_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_Eyes_Rad_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_Eyes_Poi_DR"/></td>
+                        <td><select style="width:95px;color:black;" name="attr_Eyes_Status" title="Eyes Status">
+                            <option value="Healthy" selected>Healthy</option>
+                            <option value="Wounded">Wounded</option>
+                            <option value="Crippled">Crippled</option>
+                        </select></td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>2&nbsp;
+                        <td>Head(+3)</td>
+                        <td><input style=width:40px type="number" name="attr_Head_Phy_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_Head_Ene_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_Head_Rad_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_Head_Poi_DR"/></td>
+                        <td><select style="width:95px;color:black;" name="attr_Head_Status" title="Head Status">
+                            <option value="Healthy" selected>Healthy</option>
+                            <option value="Wounded">Wounded</option>
+                            <option value="Crippled">Crippled</option>
+                        </select></td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>3-5&nbsp;
+                        <td>R. Arm</td>
+                        <td><input style=width:40px type="number" name="attr_RArm_Phy_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_RArm_Ene_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_RArm_Rad_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_RArm_Poi_DR"/></td>
+                        <td><select style="width:95px;color:black;" name="attr_RArm_Status" title="Right Arm Status">
+                            <option value="Healthy" selected>Healthy</option>
+                            <option value="Wounded">Wounded</option>
+                            <option value="Crippled">Crippled</option>
+                        </select></td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>6-8&nbsp;
+                        <td>L. Arm</td>
+                        <td><input style=width:40px type="number" name="attr_LArm_Phy_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_LArm_Ene_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_LArm_Rad_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_LArm_Poi_DR"/></td>
+                        <td><select style="width:95px;color:black;" name="attr_LArm_Status" title="Left Arm Status">
+                            <option value="Healthy" selected>Healthy</option>
+                            <option value="Wounded">Wounded</option>
+                            <option value="Crippled">Crippled</option>
+                        </select></td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>9-12&nbsp;
+                        <td>Torso</td>
+                        <td><input style=width:40px type="number" name="attr_Torso_Phy_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_Torso_Ene_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_Torso_Rad_DR"/></td>
+                        <td><input style=width:40px type="number" name="attr_Torso_Poi_DR"/></td>
+                        <td><select style="width:95px;color:black;" name="attr_Torso_Status" title="Torso Status">
+                            <option value="Healthy" selected>Healthy</option>
+                            <option value="Wounded">Wounded</option>
+                            <option value="Crippled">Crippled</option>
+                        </select></td>
+                    </tr>
+        <tr style="text-align: center;">
+            <td>13-14&nbsp;
+            <td>Groin(+2)</td>
+            <td><input style=width:40px type="number" name="attr_Groin_Phy_DR"/></td>
+            <td><input style=width:40px type="number" name="attr_Groin_Ene_DR"/></td>
+            <td><input style=width:40px type="number" name="attr_Groin_Rad_DR"/></td>
+            <td><input style=width:40px type="number" name="attr_Groin_Poi_DR"/></td>
+            <td><select style="width:95px;color:black;" name="attr_Groin_Status" title="Groin Status">
+                <option value="Healthy" selected>Healthy</option>
+                <option value="Wounded">Wounded</option>
+                <option value="Crippled">Crippled</option>
+            </select></td>
+        </tr>
+        
+        <tr style="text-align: center;">
+            <td>15-17&nbsp;
+            <td>R. Leg</td>
+            <td><input style=width:40px type="number" name="attr_RLeg_Phy_DR"/></td>
+            <td><input style=width:40px type="number" name="attr_RLeg_Ene_DR"/></td>
+            <td><input style=width:40px type="number" name="attr_RLeg_Rad_DR"/></td>
+            <td><input style=width:40px type="number" name="attr_RLeg_Poi_DR"/></td>
+            <td><select style="width:95px;color:black;" name="attr_RLeg_Status" title="Right Leg Status">
+                <option value="Healthy" selected>Healthy</option>
+                <option value="Wounded">Wounded</option>
+                <option value="Crippled">Crippled</option>
+            </select></td>
+        </tr>
+        <tr style="text-align: center;">
+            <td>18-20&nbsp;
+            <td>L. Leg</td>
+            <td><input style=width:40px type="number" name="attr_LLeg_Phy_DR"/></td>
+            <td><input style=width:40px type="number" name="attr_LLeg_Ene_DR"/></td>
+            <td><input style=width:40px type="number" name="attr_LLeg_Rad_DR"/></td>
+            <td><input style=width:40px type="number" name="attr_LLeg_Poi_DR"/></td>
+            <td><select style="width:95px;color:black;" name="attr_LLeg_Status" title="Left Leg Status">
+                <option value="Healthy" selected>Healthy</option>
+                <option value="Wounded">Wounded</option>
+                <option value="Crippled">Crippled</option>
+            </select></td>
+        </tr>
         </div>
     </div>
     
@@ -3532,6 +3517,9 @@
         </div>
     </div>
 </div><!-- end Pack Tactics div -->
+
+
+
 <!-- Roll Template(s) -->
 <div>
     <rolltemplate class="sheet-rolltemplate-wod">

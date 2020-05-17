@@ -49,57 +49,67 @@ var Doom = {
     "20"  : "https://s3.amazonaws.com/files.d20.io/images/135466957/v5xHgfMExcwZz7akpdXNLw/max.png?1589699159",
 }
 
-const command = "!ActionPoints ";
+const APcommand = "!ActionPoints ";
+const DPcommand = "!DoomPoints "
 //const trackerName = "Action Point Tracker";
 let trackerObjs;
-let attributeName = "Action_Points";
+let APattributeName = "Action_Points";
 let message;
 
+function changeTracker(trackerName, attributeName, images, change) {
+    let current;
+    let min = images._min;
+    let max = images._max;
+    let pointsName = attributeName.replace("_"," ");
+    let flag;
+    trackerObjs = findObjs({"name": trackerName});
+    _.each(trackerObjs, function (obj) {
+        trackerAttributes = findObjs({
+                                         "_characterid": obj.get("_id"),
+                                         "name"        : attributeName
+                                     });
+        _.each(trackerAttributes, function (attribute) {
+            current = Number(attribute.get("current"));
 
-on("chat:message", function (msg) {
-    if (msg.type == "api" && msg.content.indexOf(command) !== -1) {
-        message = "";
-        let current;
-        let max;
-        let action = msg.content.replace(command, "")
-        trackerObjs = findObjs({"name": trackerName});
-        _.each(trackerObjs, function (obj) {
-            trackerAttributes = findObjs({
-                                             "_characterid": obj.get("_id"),
-                                             "name"        : attributeName
-                                         });
-            _.each(trackerAttributes, function (attribute) {
-                current = Number(attribute.get("current"));
-                max = Number(attribute.get("max"));
-
-                if (action == "increment") {
-                    if (current < max) {
-                        current++;
-                    } else {
-                        message = "Cannot further increase Action Points, it is already at " + max + ".";
-                    }
+            if (change == "increment") {
+                if (current < max) {
+                    current++;
+                } else {
+                    message = `Cannot further increase ${pointsName}, it is already at ${max}.`;
+                    flag = "atMax";
                 }
-                if (action == "decrement") {
-                    if (current > 0) {
-                        current--
-                    } else {
-                        message = "Cannot further decrease Action Points, it is already at 0.";
-                    }
+            }
+            if (change == "decrement") {
+                if (current > min) {
+                    current--
+                } else {
+                    message = `Cannot further decrease ${pointsName}, it is already at ${min}.`;
+                    flag = "atMin"
                 }
-                attribute.set({"current": current});
+            }
+            attribute.set({"current": current});
 
-
-            });
-            let image = getCleanImgsrc(APimages[current]);
-
-            obj.set({"imgsrc": image})
-            obj.set({"avatar": image});
 
         });
+        let image = getCleanImgsrc(APimages[current]);
 
-        if (message == "") {
-            message = "You have " + current + " action Points left.";
-        }
-        sendChat("Action Point Tracker", message);
+        obj.set({"imgsrc": image})
+        obj.set({"avatar": image});
+
+    });
+    if (message == "") {
+        message = `You have  ${current} ${pointsName} left.`;
+    }
+    sendChat("Point Tracker", message);
+    return({
+        "current": current,
+        "flag": flag});
+}
+
+on("chat:message", function (msg) {
+    if (msg.type == "api" && msg.content.indexOf(APcommand) !== -1) {
+        message = "";
+        let action = msg.content.replace(APcommand, "")
+        flag = changeTracker("Action Point Tracker",APattributeName,APimages,action)
     }
 });

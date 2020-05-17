@@ -18,7 +18,7 @@ var APimages = {
     6     : "https://s3.amazonaws.com/files.d20.io/images/135028160/i1OtNXHawq0DJ2F2kiuZMA/max.png?1589608950",
 };
 
-var Doom = {
+var DPimages = {
     "_min": -5,
     "_max": 20,
     "-5"  : "https://s3.amazonaws.com/files.d20.io/images/135466825/H7_okuIMG6N9h_0XVW1PqA/max.png?1589699105",
@@ -50,18 +50,21 @@ var Doom = {
 }
 
 const APcommand = "!ActionPoints ";
-const DPcommand = "!DoomPoints "
-//const trackerName = "Action Point Tracker";
-let trackerObjs;
-let APattributeName = "Action_Points";
-let message;
+const APtrackerName = "Action Point Tracker";
+const APattributeName = "Action_Points";
+
+const DPcommand = "!Doom ";
+const DPtrackerName = "Doom Tracker";
+const DPattributeName = "Doom";
+
 
 function changeTracker(trackerName, attributeName, images, change) {
     let current;
     let min = images._min;
     let max = images._max;
-    let pointsName = attributeName.replace("_"," ");
+    let pointsName = attributeName.replace("_", " ");
     let flag;
+    let message = "";
     trackerObjs = findObjs({"name": trackerName});
     _.each(trackerObjs, function (obj) {
         trackerAttributes = findObjs({
@@ -91,25 +94,36 @@ function changeTracker(trackerName, attributeName, images, change) {
 
 
         });
-        let image = getCleanImgsrc(APimages[current]);
+        let image = getCleanImgsrc(images[current]);
 
         obj.set({"imgsrc": image})
         obj.set({"avatar": image});
 
     });
+
     if (message == "") {
-        message = `You have  ${current} ${pointsName} left.`;
+        message = `You now have  ${current} ${pointsName}.`;
     }
     sendChat("Point Tracker", message);
-    return({
+    return ({
         "current": current,
-        "flag": flag});
+        "flag"   : flag
+    });
 }
 
 on("chat:message", function (msg) {
     if (msg.type == "api" && msg.content.indexOf(APcommand) !== -1) {
         message = "";
-        let action = msg.content.replace(APcommand, "")
-        flag = changeTracker("Action Point Tracker",APattributeName,APimages,action)
+        let action = msg.content.replace(APcommand, "");
+        response = changeTracker(APtrackerName, APattributeName, APimages, action)
+
+        if (response.flag == "atMin") {
+            sendChat("Point Tracker", "You have made one step towards DOOM");
+            changeTracker(DPtrackerName, DPattributeName, DPimages, "increment");
+        }
+    }
+    if (msg.type == "api" && msg.content.indexOf(DPcommand) !== -1) {
+        let action = msg.content.replace(DPcommand, "");
+        changeTracker(DPtrackerName, DPattributeName, DPimages, action);
     }
 });

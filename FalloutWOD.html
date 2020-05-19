@@ -55,6 +55,7 @@
     </div>
 <br>
 </div>
+
 <!-- Set up the Tabs -->
 <input type="radio" class="sheet-tab sheet-tab1" name="attr_core-tab" value="1" title="Basic" checked="checked"/>
 <span class="sheet-tab sheet-tab1">Basic</span>
@@ -62,7 +63,7 @@
 <span class="sheet-tab sheet-tab2">Perks</span>
 <input type="radio" class="sheet-tab sheet-tab3" name="attr_core-tab" value="3" title="Perks"/>
 <span class="sheet-tab sheet-tab3">Pwr Armor</span>
-<input type="radio" class="sheet-tab sheet-tab4" name="attr_core-tab" value="4" title="Pwr Armor"/>
+<input type="radio" class="sheet-tab sheet-tab4" name="attr_core-tab" value="4" title="Pwr Armor/ Drugs"/>
 <span class="sheet-tab sheet-tab4">Drugs</span>
 <input type="radio" class="sheet-tab sheet-tab5" name="attr_core-tab" value="5" title="Gifts, Rites & Fetishes"/>
 <span class="sheet-tab sheet-tab5">Combat</span>
@@ -282,7 +283,7 @@
             <div class="sheet-row">
                 <div class="sheet-item sheet-90">
                     <input type="radio" class="sheet-attribute" name="attr_skill_select" value="@{energy_weapons}"/><span
-                        class="sheet-attribute">Energy</span>
+                        class="sheet-attribute">Energy </span>
                 </div>
                 <div class="sheet-item sheet-160">
                     <input type="radio" class="sheet-normal sheet-zero" name="attr_energy_weapons" value="0"
@@ -2722,7 +2723,7 @@
                 Ammo<br>Count
             </div>
             <div class="sheet-item sheet-30">
-                Damage
+                Damages
             </div>
         </div>
         <br>
@@ -3077,10 +3078,6 @@
             </div>
         </div>
         <hr/>
-    <!-----     Brawling     ----->
-        <h3 class="sheet-inline">Armor and Limbs</h3>
-        <input type="checkbox" class="sheet-claw" name="attr_claw-Brawling" checked/><span></span>
-        <div class="sheet-body sheet-center">
         <div class="sheet-body" style="margin-top: 10px">
             <table border="1" style="width:100%">
                 <tr style="text-align: center;">
@@ -3833,11 +3830,11 @@
             <rolltemplate class="sheet-rolltemplate-wod">
                 <table>
 
-                    {{#damage}}
+                    {{#Damages}}
                     <tr>
-                        <th>{{name}} deals damage with {{damage}}</th>
+                        <th>{{name}} deals Damages with {{Damages}}</th>
                     </tr>
-                    {{/damage}}
+                    {{/Damages}}
 
                     {{#attack}}
                     <tr>

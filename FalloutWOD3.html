@@ -54,7 +54,6 @@
     <div class="sheet-item sheet-160"><input type="text" name="attr_Karma"/></div>
 </div>
 <br>
-</div>
 <!-- Set up the Tabs -->
 <input type="radio" class="sheet-tab sheet-tab1" name="attr_core-tab" value="1" title="Basic"
        checked="checked"/>
@@ -140,7 +139,7 @@
     <br>
 </div>
 <!--TAB Basic (Attributes, Abilities, Dicepools)-->
-<div class="sheet-section-1">
+
     <!--
     <div class="banner"></div>
     -->
@@ -160,7 +159,7 @@
                 <input type="number" class="sheet-normal" name="attr_strength_base" value="4"/><span></span>
             </div>
 
-            <div class="sheet-item sheet-60">
+            <div class="sheet-item sheet-80">
                 <input type="radio" class="sheet-attribute" name="attr_attribute_select" value="@{perception}"/><span
                     class="sheet-attribute">Perception</span>
             </div>
@@ -183,7 +182,7 @@
             <div class="sheet-item sheet-40">
                 <input type="number" class="sheet-normal" name="attr_charisma_base" value="4"/><span></span>
             </div>
-            <div class="sheet-item sheet-60">
+            <div class="sheet-item sheet-80">
                 <input type="radio" class="sheet-attribute" name="attr_attribute_select"
                        value="@{intelligence}"/><span
                     class="sheet-attribute">Intelligence</span>
@@ -191,7 +190,7 @@
             <div class="sheet-item sheet-40">
                 <input type="number" class="sheet-normal" name="attr_intelligence_base" value="4"/><span></span>
             </div>
-            <div class="sheet-item sheet-40">
+            <div class="sheet-item sheet-60">
                 <input type="radio" class="sheet-attribute" name="attr_attribute_select"
                        value="@{agility}"/><span
                     class="sheet-attribute">Agility</span>
@@ -219,7 +218,7 @@
                 <input type="number" class="sheet-normal" name="attr_p_strength_base" value="4"/><span></span>
             </div>
 
-            <div class="sheet-item sheet-60">
+            <div class="sheet-item sheet-80">
                 <span>Perception</span>
             </div>
             <div class="sheet-item sheet-40">
@@ -237,14 +236,14 @@
             <div class="sheet-item sheet-40">
                 <input type="number" class="sheet-normal" name="attr_p_charisma_base" value="4"/><span></span>
             </div>
-            <div class="sheet-item sheet-60">
+            <div class="sheet-item sheet-80">
                 Intelligence
             </div>
             <div class="sheet-item sheet-40">
                 <input type="number" class="sheet-normal" name="attr_p_intelligence_base"
                        value="4"/><span></span>
             </div>
-            <div class="sheet-item sheet-40">
+            <div class="sheet-item sheet-60">
                 Agility
             </div>
             <div class="sheet-item sheet-40">
@@ -360,7 +359,7 @@
                 <div class="sheet-item sheet-90">
                     <input type="radio" class="sheet-attribute" name="attr_skill_select"
                            value="@{close_combat}"/><span
-                        class="sheet-attribute">Close Combat</span>
+                        class="sheet-attribute">C. Combat</span>
                 </div>
                 <div class="sheet-item sheet-160">
                     <input type="radio" class="sheet-normal sheet-zero" name="attr_close_combat" value="0"
@@ -380,22 +379,22 @@
             <div class="sheet-row">
                 <div class="sheet-item sheet-90">
                     <input type="radio" class="sheet-attribute" name="attr_skill_select"
-                           value="@{throwing}"/><span
-                        class="sheet-attribute">Throwing</span>
+                           value="@{projectile}"/><span
+                        class="sheet-attribute">Projectile</span>
                 </div>
                 <div class="sheet-item sheet-160">
-                    <input type="radio" class="sheet-normal sheet-zero" name="attr_throwing" value="0"
+                    <input type="radio" class="sheet-normal sheet-zero" name="attr_projectile" value="0"
                            checked/><span></span>
-                    <input type="radio" class="sheet-normal" name="attr_throwing" value="1"/><span></span>
-                    <input type="radio" class="sheet-normal" name="attr_throwing" value="2"/><span></span>
-                    <input type="radio" class="sheet-normal" name="attr_throwing" value="3"/><span></span>
-                    <input type="radio" class="sheet-normal" name="attr_throwing" value="4"/><span></span>
-                    <input type="radio" class="sheet-normal" name="attr_throwing" value="5"/><span></span>&nbsp;&nbsp;
-                    <input type="radio" class="sheet-normal" name="attr_throwing" value="6"/><span></span>
-                    <input type="radio" class="sheet-normal" name="attr_throwing" value="7"/><span></span>
-                    <input type="radio" class="sheet-normal" name="attr_throwing" value="8"/><span></span>
-                    <input type="radio" class="sheet-normal" name="attr_throwing" value="9"/><span></span>
-                    <input type="radio" class="sheet-normal" name="attr_throwing" value="10"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_projectile" value="1"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_projectile" value="2"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_projectile" value="3"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_projectile" value="4"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_projectile" value="5"/><span></span>&nbsp;&nbsp;
+                    <input type="radio" class="sheet-normal" name="attr_projectile" value="6"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_projectile" value="7"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_projectile" value="8"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_projectile" value="9"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_projectile" value="10"/><span></span>
                 </div>
             </div>
             <div class="sheet-row">
@@ -889,18 +888,18 @@
                         class="sheet-attribute">Science</span>
                 </div>
                 <div class="sheet-item sheet-160">
-                    <input type="radio" class="sheet-normal sheet-zero" name="science" value="0"
+                    <input type="radio" class="sheet-normal sheet-zero" name="attr_science" value="0"
                            checked/><span></span>
-                    <input type="radio" class="sheet-normal" name="science" value="1"/><span></span>
-                    <input type="radio" class="sheet-normal" name="science" value="2"/><span></span>
-                    <input type="radio" class="sheet-normal" name="science" value="3"/><span></span>
-                    <input type="radio" class="sheet-normal" name="science" value="4"/><span></span>
-                    <input type="radio" class="sheet-normal" name="science" value="5"/><span></span>&nbsp;&nbsp;
-                    <input type="radio" class="sheet-normal" name="science" value="6"/><span></span>
-                    <input type="radio" class="sheet-normal" name="science" value="7"/><span></span>
-                    <input type="radio" class="sheet-normal" name="science" value="8"/><span></span>
-                    <input type="radio" class="sheet-normal" name="science" value="9"/><span></span>
-                    <input type="radio" class="sheet-normal" name="science" value="10"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_science" value="1"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_science" value="2"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_science" value="3"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_science" value="4"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_science" value="5"/><span></span>&nbsp;&nbsp;
+                    <input type="radio" class="sheet-normal" name="attr_science" value="6"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_science" value="7"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_science" value="8"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_science" value="9"/><span></span>
+                    <input type="radio" class="sheet-normal" name="attr_science" value="10"/><span></span>
                 </div>
             </div>
             <div class="sheet-row">
@@ -1149,7 +1148,7 @@
                 <option value="@{Big Guns}">Big Guns</option>
                 <option value="@{Explosives}">Explosives</option>
                 <option value="@{Close Combat}">Close Combat</option>
-                <option value="@{Throwing}">Throwing</option>
+                <option value="@{Projectile}">Projectile</option>
                 <option value="@{Athletics}">Athletics</option>
                 <option value="@{Speech}">Speech</option>
                 <option value="@{Deception}">Deception</option>
@@ -1242,7 +1241,7 @@
                     <option value="@{Big Guns}">Big Guns</option>
                     <option value="@{Explosives}">Explosives</option>
                     <option value="@{Close Combat}">Close Combat</option>
-                    <option value="@{Throwing}">Throwing</option>
+                    <option value="@{Projectile}">Projectile</option>
                     <option value="@{Athletics}">Athletics</option>
                     <option value="@{Speech}">Speech</option>
                     <option value="@{Deception}">Deception</option>
@@ -2054,7 +2053,6 @@
         </div> -->
     </div>
 </div>
-</div>
 
 <!--TAB Power Armor-->
 <div class="sheet-section-3">
@@ -2768,8 +2766,7 @@
                 </div>
             </div> -->
 </div>
-</div>
-</div>
+</div></div>
 <!--HP, Radiation, Initiative and Defense-->
 <div class="sheet-section-5" style="padding:0">
     <h1 class="sheet-center">Trackers</h1>
@@ -2925,7 +2922,7 @@
                             <option value="@{energy_weapons}">Energy Weapons</option>
                             <option value="@{big_guns}">Big Guns</option>
                             <option value="@{close_combat}">Close Combat</option>
-                            <option value="@{throwing}">Throwing</option>
+                            <option value="@{projectile}">Projectile</option>
                             <option value="@{explosives}">Explosives</option>
                         </select>
                     </div>
@@ -4330,9 +4327,9 @@ on("change:skill_select sheet:opened", function() {
                 skill: 'Close Combat'
             })
         }
-        else if (values.skill_select == '@{throwing}') {
+        else if (values.skill_select == '@{projectile}') {
             setAttrs({
-                skill: 'Throwing'
+                skill: 'Projectile'
             })
         }
         else if (values.skill_select == '@{athletics}') {
